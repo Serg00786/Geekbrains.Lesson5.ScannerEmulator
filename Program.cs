@@ -10,6 +10,8 @@ namespace Geekbrains.Lesson5.ScannerEmulator
     {
         static void Main(string[] args)
         {
+
+          //
         }
     }
 }
