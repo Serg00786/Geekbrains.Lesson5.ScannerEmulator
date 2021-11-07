@@ -20,7 +20,7 @@ namespace Geekbrains.Lesson5.ScannerEmulator
 
             if (File.Exists("Scanner.txt"))
             {
-                File.Delete("Scanner.txt"); //Delete file that Id would be always new
+                File.Delete("Scanner.txt"); //Delete file that Ids would be always new
             }            
             File.WriteAllLines("Scanner.txt", lines); //Write Id to the file
         }
