@@ -63,12 +63,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataModel.cs" />
     <Compile Include="GenerateScannerFile.cs" />
     <Compile Include="IGenerateScannerFile.cs" />
     <Compile Include="IPCEfficiencycs.cs" />
+    <Compile Include="IScanner.cs" />
     <Compile Include="PCEfficiency.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scanner.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -84,6 +87,12 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ReadScannerLibrary\ReadScannerLibrary.csproj">
+      <Project>{0e65e76f-c3bb-473e-80bd-f79e92955d3e}</Project>
+      <Name>ReadScannerLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

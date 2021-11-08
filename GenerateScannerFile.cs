@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace Geekbrains.Lesson5.ScannerEmulator
 {
-    public class GenerateScannerFile
+    public class GenerateScannerFile : IGenerateScannerFile
     {
         Random rnd = new Random();
         public void GenerateScannerData()
