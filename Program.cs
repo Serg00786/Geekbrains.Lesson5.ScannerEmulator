@@ -29,7 +29,6 @@ namespace Geekbrains.Lesson5.ScannerEmulator
                 dataModelDTO.CPULoad = Encoding.ASCII.GetBytes(Convert.ToString(Efficiency.GetCPULOad()));
                 dataModelDTO.MemoryLoad = Encoding.ASCII.GetBytes(Convert.ToString(Efficiency.GetMemoryLoad()));
                 mainLibraryClass.GetData(dataModelDTO);
-                Thread.Sleep(1000);
             }
 
             
