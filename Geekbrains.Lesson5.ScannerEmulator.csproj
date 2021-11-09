@@ -89,7 +89,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ReadScannerLibrary\ReadScannerLibrary.csproj">
+    <ProjectReference Include="..\..\Geekbrains.Lesson5.ReadScannerLibrary-dev\Geekbrains.Lesson5.ReadScannerLibrary-dev\ReadScannerLibrary.csproj">
       <Project>{0e65e76f-c3bb-473e-80bd-f79e92955d3e}</Project>
       <Name>ReadScannerLibrary</Name>
     </ProjectReference>
