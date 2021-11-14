@@ -1,4 +1,5 @@
-﻿using ReadScannerLibrary;
+﻿using Autofac;
+using ReadScannerLibrary;
 using ReadScannerLibrary.DTO;
 using System;
 using System.Collections.Generic;
@@ -14,25 +15,31 @@ namespace Geekbrains.Lesson5.ScannerEmulator
     {
         static void Main(string[] args)
         {
-            IGenerateScannerFile generateScannerFile = new GenerateScannerFile();
-            generateScannerFile.GenerateScannerData();
-            IScanner scanner = new Scanner();
+            var builder = new ContainerBuilder();
+            builder.RegisterType<GenerateScannerFile>().As<IGenerateScannerFile>();
+            builder.RegisterType<PCEfficiency>().As<IPCEfficiencycs>();
+            builder.RegisterType<Scanner>().As<IScanner>();
+            builder.RegisterType<MainLibraryClass>().As<IMainLibraryClass>();
+
+            IContainer container = builder.Build();
+
+            IGenerateScannerFile generateScannerService = container.Resolve<IGenerateScannerFile>();
+            IPCEfficiencycs EfficiencyService = container.Resolve<IPCEfficiencycs>();
+            IScanner ScannerService = container.Resolve<IScanner>();
+            IMainLibraryClass MainLibraryService = container.Resolve<IMainLibraryClass>();
+
+            generateScannerService.GenerateScannerData();
+
             dataModelDTO dataModelDTO = new dataModelDTO();
 
-            IPCEfficiencycs Efficiency = new PCEfficiency();
-            MainLibraryClass mainLibraryClass = new MainLibraryClass();
-
-            string [] GetScannerData = scanner.ReadScanner();
+            string [] GetScannerData = ScannerService.ReadScanner();
             for (int i=0; i<10; i++)
             {
                 dataModelDTO.ID = Encoding.ASCII.GetBytes(GetScannerData[i]);
-                dataModelDTO.CPULoad = Encoding.ASCII.GetBytes(Convert.ToString(Efficiency.GetCPULOad()));
-                dataModelDTO.MemoryLoad = Encoding.ASCII.GetBytes(Convert.ToString(Efficiency.GetMemoryLoad()));
-                mainLibraryClass.GetData(dataModelDTO);
-            }
-
-            
-
+                dataModelDTO.CPULoad = Encoding.ASCII.GetBytes(Convert.ToString(EfficiencyService.GetCPULOad()));
+                dataModelDTO.MemoryLoad = Encoding.ASCII.GetBytes(Convert.ToString(EfficiencyService.GetMemoryLoad()));
+                MainLibraryService.GetData(dataModelDTO);
+            }         
         }
     }
 }

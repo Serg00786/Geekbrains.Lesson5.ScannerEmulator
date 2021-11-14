@@ -6,6 +6,12 @@ using System.Threading.Tasks;
 
 namespace Geekbrains.Lesson5.ScannerEmulator
 {
+    public interface IPCEfficiencycs
+    {
+        int GetCPULOad();
+        int GetMemoryLoad();
+
+    }
     class PCEfficiency : IPCEfficiencycs
     {
         Random rnd = new Random();

@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30611.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geekbrains.Lesson5.ScannerEmulator", "Geekbrains.Lesson5.ScannerEmulator.csproj", "{F15EAD62-8E62-41F0-8301-B508D270BCE9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadScannerLibrary", "..\..\Geekbrains.Lesson5.ReadScannerLibrary-dev\Geekbrains.Lesson5.ReadScannerLibrary-dev\ReadScannerLibrary.csproj", "{0E65E76F-C3BB-473E-80BD-F79E92955D3E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadScannerLibrary", "..\ReadScannerLibrary\Geekbrains.Lesson5.ReadScannerLibrary-dev\ReadScannerLibrary.csproj", "{0E65E76F-C3BB-473E-80BD-F79E92955D3E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
